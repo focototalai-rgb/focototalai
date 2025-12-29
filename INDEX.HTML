@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foco Total AI</title>
+  <meta name="description" content="Foco Total AI — produtividade guiada por inteligência artificial. Acesso premium com foco em execução diária." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0d10;
+      --card: #12151b;
+      --text: #eaeaf0;
+      --muted: #9aa0aa;
+      --accent: #6cff9d;
+      --border: #1e222b;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at top, #12151b, #0b0d10);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px 24px;
+    }
+
+    .hero {
+      text-align: center;
+      padding-top: 120px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.1rem;
+      max-width: 680px;
+      margin: 24px auto 40px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 16px 34px;
+      background: var(--accent);
+      color: #000;
+      font-weight: 600;
+      border-radius: 14px;
+      text-decoration: none;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(108,255,157,.25);
+    }
+
+    section {
+      margin-top: 120px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 32px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 32px;
+      border-radius: 20px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .muted { color: var(--muted); }
+
+    .pricing .card {
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 80px 24px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container hero">
+    <h1>Você não precisa de mais um app.<br>Precisa de foco.</h1>
+    <p>Foco Total AI é produtividade guiada por inteligência artificial.
+    Todas as funcionalidades. Apenas o tempo de acesso muda.</p>
+    <a href="#planos" class="btn">Ativar Foco Total AI</a>
+  </div>
+
+  <section class="container">
+    <h2>O problema não é falta de esforço</h2>
+    <div class="grid">
+      <div class="card">Informação demais, prioridade de menos.</div>
+      <div class="card">Ferramentas que complicam em vez de ajudar.</div>
+      <div class="card">Rotinas que não se sustentam.</div>
+    </div>
+  </section>
+
+  <section class="container">
+    <h2>O método</h2>
+    <div class="grid">
+      <div class="card">AI organiza suas ideias antes da agenda.</div>
+      <div class="card">Objetivos viram ações executáveis.</div>
+      <div class="card">Clareza diária sem sobrecarga.</div>
+    </div>
+  </section>
+
+  <section class="container pricing" id="planos">
+    <h2>Acesso Premium</h2>
+    <p class="muted">Mesmas funcionalidades. Apenas o período de uso muda.</p>
+    <div class="grid" style="margin-top:40px">
+      <div class="card">
+        <h3>Mensal</h3>
+        <p class="muted">30 dias de acesso premium</p>
+        <a class="btn" href="#">Assinar</a>
+      </div>
+      <div class="card">
+        <h3>Trimestral</h3>
+        <p class="muted">90 dias de acesso premium</p>
+        <a class="btn" href="#">Assinar</a>
+      </div>
+      <div class="card">
+        <h3>Anual</h3>
+        <p class="muted">12 meses de acesso premium</p>
+        <a class="btn" href="#">Assinar</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © Foco Total AI — Pagamentos processados pela Stripe
+  </footer>
+
+</body>
+</html>
