@@ -4,175 +4,329 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Foco Total AI</title>
-  <meta name="description" content="Foco Total AI — produtividade guiada por inteligência artificial. Acesso premium com foco em execução diária." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #0b0d10;
-      --card: #12151b;
-      --text: #eaeaf0;
-      --muted: #9aa0aa;
-      --accent: #6cff9d;
-      --border: #1e222b;
+    :root{
+      --bg:#0a0d12;
+      --card:#121826;
+      --accent:#8b7cff;
+      --accent-strong:#a99bff;
+      --text:#f8fafc;
+      --muted:#a1a1aa;
+      --highlight:#22c55e;
     }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: radial-gradient(circle at top, #12151b, #0b0d10);
-      color: var(--text);
-      line-height: 1.6;
+    *{box-sizing:border-box;margin:0;padding:0;font-family:Inter,system-ui,Arial}
+    body{
+      background:radial-gradient(circle at top, #141a2a, #0a0d12 65%);
+      color:var(--text);
+      display:flex;
+      justify-content:center;
     }
-
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 80px 24px;
+    .container{
+      width:100%;
+      max-width:430px;
+      padding:24px 16px 120px;
+      text-align:center;
     }
-
-    .hero {
-      text-align: center;
-      padding-top: 120px;
+    header{
+      margin-top:16px;
+      margin-bottom:40px;
     }
-
-    .hero h1 {
-      font-size: clamp(2.4rem, 5vw, 3.8rem);
-      font-weight: 700;
-      letter-spacing: -0.03em;
+    header img{
+      width:80px;
+      margin-bottom:14px;
     }
-
-    .hero p {
-      color: var(--muted);
-      font-size: 1.1rem;
-      max-width: 680px;
-      margin: 24px auto 40px;
+    h1{
+      font-size:2.4rem;
+      font-weight:900;
+      letter-spacing:-1px;
     }
-
-    .btn {
-      display: inline-block;
-      padding: 16px 34px;
-      background: var(--accent);
-      color: #000;
-      font-weight: 600;
-      border-radius: 14px;
-      text-decoration: none;
-      transition: transform .15s ease, box-shadow .15s ease;
+    .subtitle{
+      margin-top:16px;
+      font-size:1.05rem;
+      color:var(--muted);
+      line-height:1.5;
     }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(108,255,157,.25);
+    .badge{
+      display:inline-block;
+      margin-top:18px;
+      padding:8px 16px;
+      border-radius:999px;
+      background:rgba(139,124,255,.18);
+      color:var(--accent-strong);
+      font-weight:700;
+      font-size:.85rem;
     }
-
-    section {
-      margin-top: 120px;
+    .section{
+      margin-top:48px;
     }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 32px;
+    .section h2{
+      font-size:1.4rem;
+      margin-bottom:14px;
     }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      padding: 32px;
-      border-radius: 20px;
+    .section p{
+      color:var(--muted);
+      line-height:1.6;
+      font-size:.95rem;
     }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 24px;
-      letter-spacing: -0.02em;
+    .plans{
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+      margin-top:48px;
     }
-
-    h3 {
-      margin-bottom: 10px;
-      font-size: 1.1rem;
+    .plan{
+      background:linear-gradient(180deg, #161d30, #10162a);
+      border-radius:20px;
+      padding:28px 22px;
+      box-shadow:0 18px 35px rgba(0,0,0,.35);
+      position:relative;
     }
-
-    .muted { color: var(--muted); }
-
-    .pricing .card {
-      text-align: center;
+    .plan h3{
+      font-size:1.3rem;
+      margin-bottom:10px;
     }
-
-    footer {
-      text-align: center;
-      padding: 80px 24px;
-      color: var(--muted);
-      font-size: .9rem;
+    .price{
+      font-size:2.3rem;
+      font-weight:900;
+      margin-bottom:18px;
+    }
+    .plan button{
+      width:100%;
+      padding:16px;
+      border-radius:14px;
+      border:none;
+      background:linear-gradient(135deg, var(--accent), var(--accent-strong));
+      color:#0a0d12;
+      font-weight:800;
+      font-size:1rem;
+      cursor:pointer;
+    }
+    .recommended{
+      outline:2px solid var(--highlight);
+    }
+    .recommended button{
+      animation:pulse 1.6s infinite;
+    }
+    @keyframes pulse{
+      0%{box-shadow:0 0 0 0 rgba(34,197,94,.6)}
+      70%{box-shadow:0 0 0 16px rgba(34,197,94,0)}
+      100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}
+    }
+    .ribbon{
+      position:absolute;
+      top:-12px;
+      left:50%;
+      transform:translateX(-50%);
+      background:var(--highlight);
+      color:#022c22;
+      padding:6px 14px;
+      border-radius:999px;
+      font-size:.75rem;
+      font-weight:800;
+    }
+    .floating-cta{
+      position:fixed;
+      bottom:16px;
+      left:50%;
+      transform:translateX(-50%);
+      width:calc(100% - 32px);
+      max-width:430px;
+      padding:18px;
+      border-radius:18px;
+      background:linear-gradient(135deg, var(--accent), var(--accent-strong));
+      color:#0a0d12;
+      font-weight:900;
+      font-size:1.05rem;
+      text-align:center;
+      box-shadow:0 20px 40px rgba(0,0,0,.45);
+    }
+  </style>
+</head>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foco Total AI</title>
+  <style>
+    :root{
+      --bg:#0a0d12;
+      --card:#121826;
+      --accent:#8b7cff;
+      --accent-strong:#a99bff;
+      --text:#f8fafc;
+      --muted:#a1a1aa;
+      --highlight:#22c55e;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;font-family:Inter,system-ui,Arial}
+    body{
+      background:radial-gradient(circle at top, #141a2a, #0a0d12 65%);
+      color:var(--text);
+      display:flex;
+      justify-content:center;
+    }
+    .container{
+      width:100%;
+      max-width:430px;
+      padding:24px 16px 120px;
+      text-align:center;
+    }
+    header{
+      margin-top:16px;
+      margin-bottom:40px;
+    }
+    header img{
+      width:80px;
+      margin-bottom:14px;
+    }
+    h1{
+      font-size:2.4rem;
+      font-weight:900;
+      letter-spacing:-1px;
+    }
+    .subtitle{
+      margin-top:16px;
+      font-size:1.05rem;
+      color:var(--muted);
+      line-height:1.5;
+    }
+    .badge{
+      display:inline-block;
+      margin-top:18px;
+      padding:8px 16px;
+      border-radius:999px;
+      background:rgba(139,124,255,.18);
+      color:var(--accent-strong);
+      font-weight:700;
+      font-size:.85rem;
+    }
+    .section{
+      margin-top:48px;
+    }
+    .section h2{
+      font-size:1.4rem;
+      margin-bottom:14px;
+    }
+    .section p{
+      color:var(--muted);
+      line-height:1.6;
+      font-size:.95rem;
+    }
+    .plans{
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+      margin-top:48px;
+    }
+    .plan{
+      background:linear-gradient(180deg, #161d30, #10162a);
+      border-radius:20px;
+      padding:28px 22px;
+      box-shadow:0 18px 35px rgba(0,0,0,.35);
+      position:relative;
+    }
+    .plan h3{
+      font-size:1.3rem;
+      margin-bottom:10px;
+    }
+    .price{
+      font-size:2.3rem;
+      font-weight:900;
+      margin-bottom:18px;
+    }
+    .plan button{
+      width:100%;
+      padding:16px;
+      border-radius:14px;
+      border:none;
+      background:linear-gradient(135deg, var(--accent), var(--accent-strong));
+      color:#0a0d12;
+      font-weight:800;
+      font-size:1rem;
+      cursor:pointer;
+    }
+    .recommended{
+      outline:2px solid var(--highlight);
+    }
+    .recommended button{
+      animation:pulse 1.6s infinite;
+    }
+    @keyframes pulse{
+      0%{box-shadow:0 0 0 0 rgba(34,197,94,.6)}
+      70%{box-shadow:0 0 0 16px rgba(34,197,94,0)}
+      100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}
+    }
+    .ribbon{
+      position:absolute;
+      top:-12px;
+      left:50%;
+      transform:translateX(-50%);
+      background:var(--highlight);
+      color:#022c22;
+      padding:6px 14px;
+      border-radius:999px;
+      font-size:.75rem;
+      font-weight:800;
+    }
+    .floating-cta{
+      position:fixed;
+      bottom:16px;
+      left:50%;
+      transform:translateX(-50%);
+      width:calc(100% - 32px);
+      max-width:430px;
+      padding:18px;
+      border-radius:18px;
+      background:linear-gradient(135deg, var(--accent), var(--accent-strong));
+      color:#0a0d12;
+      font-weight:900;
+      font-size:1.05rem;
+      text-align:center;
+      box-shadow:0 20px 40px rgba(0,0,0,.45);
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <header>
+      <!-- Logo no topo da página -->
+            <h1>Foco Total AI</h1>
+      <p class="subtitle">Quando sua mente acelera, trava ou entra em pânico, alguém precisa assumir o controle. Esse alguém é o app.</p>
+      <span class="badge">Modo Crise · Resgate Imediato</span>
+    </header>
 
-  <div class="container hero">
-    <div style="font-size:0.9rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-bottom:12px)">Aplicativo</div>
-    <h1 style="font-size:clamp(3rem,6vw,5rem)">FOCO TOTAL AI</h1>
-    <p>Produtividade guiada por inteligência artificial.<br>
-    Organização, clareza e execução diária em um único sistema.</p>
-    <div style="margin-top:32px; display:flex; gap:16px; justify-content:center; flex-wrap:wrap">
-      <a href="#planos" class="btn">Ativar Foco Total AI</a>
-      <a href="#resgate" class="btn" style="background:transparent; color:var(--accent); border:1px solid var(--accent)">Modo Resgate</a>
-    </div>
+    <section class="section">
+      <h2>Quando usar o Modo Crise</h2>
+      <p>
+        Use quando o coração dispara, os pensamentos não param, a ansiedade sobe
+        sem aviso ou quando você sente que vai perder o controle. O app guia você
+        passo a passo até o corpo e a mente desacelerarem novamente.
+      </p>
+    </section>
+
+    <section class="plans">
+      <div class="plan">
+        <h3>Mensal</h3>
+        <div class="price">R$ 29</div>
+        <button>Começar agora</button>
+      </div>
+
+      <div class="plan recommended">
+        <div class="ribbon">Mais escolhido</div>
+        <h3>Trimestral</h3>
+        <div class="price">R$ 69</div>
+        <button>Ativar acesso completo</button>
+        <p style="margin-top:10px;font-size:.8rem;color:#a1a1aa">Cancelamento fácil. Sem letras miúdas.</p>
+      </div>
+
+      <div class="plan">
+        <h3>Anual</h3>
+        <div class="price">R$ 199</div>
+        <button>Garantir por 1 ano</button>
+      </div>
+    </section>
   </div>
 
-  <section class="container" id="resgate">
-    <h2>Modo Resgate</h2>
-    <p class="muted" style="max-width:720px; margin-bottom:40px">Pensado para momentos de crise, ansiedade ou sobrecarga mental. Quando tudo trava, o Modo Resgate entra em ação para te estabilizar e devolver clareza.</p>
-    <div class="grid">
-      <div class="card">Respiração guiada e foco imediato</div>
-      <div class="card">Orientações simples para sair do pico de ansiedade</div>
-      <div class="card">Reconexão com o presente, sem julgamento</div>
-    </div>
-  </section>
-
-  <section class="container">
-    <h2>O problema não é falta de esforço</h2>
-    <div class="grid">
-      <div class="card">Informação demais, prioridade de menos.</div>
-      <div class="card">Ferramentas que complicam em vez de ajudar.</div>
-      <div class="card">Rotinas que não se sustentam.</div>
-    </div>
-  </section>
-
-  <section class="container">
-    <h2>O método</h2>
-    <div class="grid">
-      <div class="card">AI organiza suas ideias antes da agenda.</div>
-      <div class="card">Objetivos viram ações executáveis.</div>
-      <div class="card">Clareza diária sem sobrecarga.</div>
-    </div>
-  </section>
-
-  <section class="container pricing" id="planos">
-    <h2>Acesso Premium</h2>
-    <p class="muted">Mesmas funcionalidades. Apenas o período de uso muda.</p>
-    <div class="grid" style="margin-top:40px">
-      <div class="card">
-        <h3>Mensal</h3>
-        <p class="muted">30 dias de acesso premium</p>
-        <a class="btn" href="#">Assinar</a>
-      </div>
-      <div class="card">
-        <h3>Trimestral</h3>
-        <p class="muted">90 dias de acesso premium</p>
-        <a class="btn" href="#">Assinar</a>
-      </div>
-      <div class="card">
-        <h3>Anual</h3>
-        <p class="muted">12 meses de acesso premium</p>
-        <a class="btn" href="#">Assinar</a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    © Foco Total AI — Pagamentos processados pela Stripe
-  </footer>
-
+  <div class="floating-cta">Ativar agora</div>
 </body>
 </html>
